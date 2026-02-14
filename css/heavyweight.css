@@ -3,7 +3,7 @@
    =         Heavyweight mtab config         =
    ===========================================
 
-   Github:      https://github.com/fr0st-iwnl/mtab-config
+   Github:      https://github.com/fr0st-xyz/mtab-config
    Author:      fr0st
 
 */
@@ -98,6 +98,42 @@
   -webkit-backdrop-filter: inherit;
   opacity: 0.001;
   pointer-events: none;
+}
+
+/*===========================================
+=    BOOKMARK / FOLDER TOP ACCENT STRIP      =
+============================================*/
+
+button[data-bookmark-action="bookmark"] > div.absolute.w-full.h-1,
+button[data-bookmark-action="folder"] > div.absolute.w-full.h-1{
+  height:3px !important;
+  opacity:0.9;
+  border-top-left-radius:var(--folder-radius);
+  border-top-right-radius:var(--folder-radius);
+}
+
+
+/*===========================================
+=        BACK & PAGINATION BUTTONS           =
+============================================*/
+
+button[data-bookmark-action="pagination-nav"] ,
+button[data-bookmark-action="back"]{
+  background:var(--folder-bg);
+  backdrop-filter:blur(var(--folder-backdrop-blur)) saturate(var(--folder-backdrop-saturate));
+  box-shadow:
+    inset 0 0 8px var(--folder-shadow-inset),
+    0 4px 14px var(--folder-shadow-outer);
+  transition:
+    box-shadow var(--transition-medium),
+    border-color var(--transition-medium),
+    background var(--transition-medium);
+}
+
+button[data-bookmark-action="pagination-nav"]:hover,
+button[data-bookmark-action="back"]:hover{
+  border-color:var(--folder-border-focus);
+  background:var(--folder-bg-focus);
 }
 
 /*===============================
